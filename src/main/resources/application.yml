@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db?useUnicode=true&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: user
+    password: password
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    baseline-version: 1
+    schemas: db
+    locations: filesystem:src/main/resources/db/migration
+
+#  jpa:
+#    properties:
+#      javax:
+#        persistence:
+#          schema-generation:
+#            create-source: metadata
+#            scripts:
+#              action: create
+#              create-target: create.sql
+
+app.jwt.secret: abcdefghijklmnOPQRSTUVWXYZ
